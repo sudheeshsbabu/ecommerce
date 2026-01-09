@@ -2,11 +2,11 @@ import './checkout-header.css'
 import './CheckoutPage.css'
 import Header from '../components/Header'
 
-function CheckoutPage() {
+function CheckoutPage({ cart }) {
     return (
         <>
             <title>Checkout</title>
-            <Header />
+            <Header cart={cart} />
             <div className="checkout-header">
                 <div className="header-content">
                     <div className="checkout-header-left-section">

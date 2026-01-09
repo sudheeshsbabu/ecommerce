@@ -3,10 +3,12 @@ import './Header.css'
 
 function Header({ cart }) {
     let totalQuantity = 0
-
-    cart.forEach((cartItem) => {
-        totalQuantity += cartItem.quantity
-    })
+    console.log(cart)
+    if (cart) {
+        cart.forEach((cartItem) => {
+            totalQuantity += cartItem.quantity
+        })
+    }
     return (
         <>
             <div className="header">

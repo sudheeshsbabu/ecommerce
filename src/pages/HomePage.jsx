@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import './HomePage.css'
 import Header from '../components/Header'
 
-function HomePage() {
+function HomePage({ cart }) {
     // Method 1
     // fetch('http://localhost:3000/api/products').then((response) => {
     //     response.json().then((data) => {
@@ -20,16 +20,9 @@ function HomePage() {
 
     // Method 3
     const [products, setProducts] = useState([])
-    const [cart, setCart] = useState([])
     useEffect(() => {
-        axios.get('http://localhost:3000/api/products').then((response) => {
+        axios.get('/api/products').then((response) => {
             setProducts(response.data)
-        })
-    }, [])
-
-    useEffect(() => {
-        axios.get('http://localhost:3000/api/cart-items').then((response) => {
-            setCart(response.data)
         })
     }, [])
 
