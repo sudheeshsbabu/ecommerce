@@ -3,7 +3,6 @@ import './Header.css'
 
 function Header({ cart }) {
     let totalQuantity = 0
-    console.log(cart)
     if (cart) {
         cart.forEach((cartItem) => {
             totalQuantity += cartItem.quantity
