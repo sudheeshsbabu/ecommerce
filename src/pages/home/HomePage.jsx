@@ -4,7 +4,7 @@ import Header from '../../components/Header'
 import { ProductGrid } from './ProductGrid'
 import './HomePage.css'
 
-function HomePage({ cart }) {
+function HomePage({ cart, loadCart }) {
     // Method 1
     // fetch('http://localhost:3000/api/products').then((response) => {
     //     response.json().then((data) => {
@@ -34,7 +34,7 @@ function HomePage({ cart }) {
             <title>Home</title>
             <Header cart={cart} />
             <div className="home-page">
-                <ProductGrid products={products} />
+                <ProductGrid products={products} loadCart={loadCart} />
             </div>
         </>
     )
