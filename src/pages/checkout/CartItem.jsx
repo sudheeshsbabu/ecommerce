@@ -2,7 +2,7 @@ import dayjs from 'dayjs'
 import { formatMoney } from '../../utils/money'
 import { DeliveryOptions } from './DeliveryOptions'
 
-export function CartItem({ cartItem, deliveryOption, deliveryOptions }) {
+export function CartItem({ cartItem, deliveryOption, deliveryOptions, loadCart }) {
     return (
         <div className="cart-item-container">
             <div className="delivery-date">
@@ -33,7 +33,11 @@ export function CartItem({ cartItem, deliveryOption, deliveryOptions }) {
                     </div>
                 </div>
 
-                <DeliveryOptions cartItem={cartItem} deliveryOptions={deliveryOptions} />
+                <DeliveryOptions
+                    cartItem={cartItem}
+                    deliveryOptions={deliveryOptions}
+                    loadCart={loadCart}
+                />
             </div>
         </div>
     )
