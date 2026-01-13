@@ -8,6 +8,7 @@ vi.mock('axios');
 
 describe('Product component', () => {
     let product, loadCart;
+
     beforeEach(() => {
         product = {
             id: "15b6fc6f-327a-4ec4-896f-486349e85a3d",
@@ -22,6 +23,7 @@ describe('Product component', () => {
         }
         loadCart = vi.fn();
     })
+
     it('renders the product details correctly', () => {
         render(<Product product={product} loadCart={loadCart} />)
         expect(
@@ -38,6 +40,7 @@ describe('Product component', () => {
         ).toHaveAttribute('src', `images/ratings/rating-${(parseFloat(product.rating.stars) * 10).toFixed(0)}.png`);
 
     });
+
     it('adds a product to the cart', async () => {
         render(<Product product={product} loadCart={loadCart} />)
         const user = userEvent.setup();
