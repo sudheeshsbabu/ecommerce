@@ -36,6 +36,9 @@ function Header({ cart }: HeaderProps) {
                 </div>
 
                 <div className="right-section">
+                    <Link to="/login" className="orders-link header-link">
+                        <span className="orders-text">Login</span>
+                    </Link>
                     <Link to="/orders" className="orders-link header-link">
                         <span className="orders-text">Orders</span>
                     </Link>
