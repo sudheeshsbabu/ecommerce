@@ -1,54 +1,60 @@
-# React + TypeScript + Vite
+# E-commerce Project (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a modern e-commerce application built with React and Vite. It serves as a study project to learn and implement core e-commerce features using a component-based architecture.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The goal of this project is to build a fully functional e-commerce interface, potentially migrating from or referenced by the static files found in the `starting-code` directory. It focuses on:
+-   Component-based UI development.
+-   State management for cart and products.
+-   Modern tooling with Vite.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+-   **Framework**: React 19
+-   **Build Tool**: Vite
+-   **Language**: JavaScript (ES Modules)
+-   **Linting**: ESLint
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Project Structure
+
+*   **`src/`**: Contains the main React application source code.
+*   **`starting-code/`**: Reference static HTML/CSS files (likely the original design or prototype).
+*   **`public/`**: Static assets.
+
+## Getting Started
+
+### Prerequisites
+
+Ensure you have Node.js installed on your machine.
+
+### Installation
+
+1.  Navigate to the project directory:
+    ```bash
+    cd ecommerce
+    ```
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
+
+### Running Development Server
+
+To start the local development server:
+
+```bash
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+This will spin up a server (usually at `http://localhost:5173`) where you can view the application.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Building for Production
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+To create a production-ready build:
+
+```bash
+npm run build
 ```
+
+This generates optimized static files in the `dist/` folder.
